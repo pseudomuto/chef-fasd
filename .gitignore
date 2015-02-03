@@ -1,3 +1,4 @@
 .kitchen/
 cookbooks/
 tmp/
+Berksfile.lock
