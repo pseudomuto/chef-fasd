@@ -1,23 +1,23 @@
-fasd Cookbook
-=============
-TODO: Enter the cookbook description here.
+# fasd Cookbook
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Install [fasd](https://github.com/clvv/fasd) and add it to the path.
 
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+## Requirements
 
-e.g.
+This cookbook has been tested on Ubuntu 12.04 and 14.04. It will likely work with other
+versions/debian boxes.
+
+If you know of a version that this works for, please let me know (or update this file).
+
 #### packages
-- `toaster` - fasd needs toaster to brown your bagel.
+
+- `ark` - <https://github.com/burtlo/ark>
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
+There are two attributes that can be configured: `version` and `checksum`.
+
 #### fasd::default
 <table>
   <tr>
@@ -27,19 +27,23 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['fasd']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>["fasd"]["version"]</tt></td>
+    <td>String</td>
+    <td>The version to install. See <a href="https://github.com/clvv/fasd/releases">releases</a> for options.</td>
+    <td><tt>1.0.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>["fasd"]["checksum"]</tt></td>
+    <td>String</td>
+    <td>The 256-bit checksum for the tar file</td>
+    <td><tt>...</tt></td>
   </tr>
 </table>
 
-Usage
------
-#### fasd::default
-TODO: Write usage instructions for each cookbook.
+## Usage
 
-e.g.
+#### fasd::default
+
 Just include `fasd` in your node's `run_list`:
 
 ```json
