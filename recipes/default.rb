@@ -32,3 +32,9 @@ ark "fasd" do
   version version
   action :install_with_make
 end
+
+directory "/etc/profile.d"
+
+cookbook_file "/etc/profile.d/fasd.sh" do
+  source "fasd.sh"
+end

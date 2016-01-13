@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/pseudomuto/chef-fasd.svg?branch=master)](https://travis-ci.org/pseudomuto/chef-fasd)
 
-Install [fasd](https://github.com/clvv/fasd) and add it to the path.
+Install [fasd](https://github.com/clvv/fasd) and initialize it in _/etc/profile.d/fasd.sh_.
 
 ## Requirements
 

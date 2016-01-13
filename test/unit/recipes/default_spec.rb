@@ -36,9 +36,19 @@ describe "fasd::default" do
   it "arks fasd and installs with make" do
     version = chef_run.node["fasd"]["version"]
 
-    expect(chef_run).to install_with_make_ark("fasd").with(
+    expect(chef_run).to install_fasd.with(
       url: "https://github.com/clvv/fasd/archive/#{version}.tar.gz",
       version: version
+    )
+  end
+
+  it "ensures /etc/profile.d exists" do
+    expect(chef_run).to create_directory("/etc/profile.d")
+  end
+
+  it "creates fasd init script for profile.d" do
+    expect(chef_run).to create_cookbook_file("/etc/profile.d/fasd.sh").with(
+      source: "fasd.sh"
     )
   end
 end
