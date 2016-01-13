@@ -1,74 +1,62 @@
-# fasd Cookbook
+# fasd 
 
-Install [fasd](https://github.com/clvv/fasd) and add it to the path.
+[![Build Status](https://travis-ci.org/pseudomuto/chef-fasd.svg?branch=master)](https://travis-ci.org/pseudomuto/chef-fasd)
+
+Install [fasd](https://github.com/clvv/fasd) and initialize it in _/etc/profile.d/fasd.sh_.
 
 ## Requirements
 
-This cookbook has been tested on Ubuntu 12.04 and 14.04. It will likely work with other
-versions/debian boxes.
+This cookbook has been tested on Ubuntu 14.04. It will likely work with other versions/debian boxes.
 
 If you know of a version that this works for, please let me know (or update this file).
 
-#### packages
+#### Dependencies
 
-- `ark` - <https://github.com/burtlo/ark>
+- `ark ~> 0.0` - <https://github.com/burtlo/ark>
 
 Attributes
 ----------
 
-There are two attributes that can be configured: `version` and `checksum`.
+There's a single version attribute that matches a release on
+[github](https://github.com/clvv/fasd/releases)
 
-#### fasd::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>["fasd"]["version"]</tt></td>
-    <td>String</td>
-    <td>The version to install. See <a href="https://github.com/clvv/fasd/releases">releases</a> for options.</td>
-    <td><tt>1.0.1</tt></td>
-  </tr>
-  <tr>
-    <td><tt>["fasd"]["checksum"]</tt></td>
-    <td>String</td>
-    <td>The 256-bit checksum for the tar file</td>
-    <td><tt>...</tt></td>
-  </tr>
-</table>
+| attribute | description | default |
+|-----------|-------------|---------|
+| `node["fasd"]["version"]` | the version to install | `1.0.1` |
+
 
 ## Usage
-
-#### fasd::default
 
 Just include `fasd` in your node's `run_list`:
 
 ```json
 {
-  "name":"my_node",
   "run_list": [
     "recipe[fasd]"
   ]
 }
 ```
 
-Contributing
-------------
+## License
 
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+The MIT License (MIT)
 
-License and Authors
--------------------
-Authors:
+Copyright (c) 2016 pseudomuto
 
-* [pseudomuto] (David Muto)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-[pseudomuto]: https://github.com/pseudomuto
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

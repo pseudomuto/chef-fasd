@@ -23,5 +23,4 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-default[:fasd][:version]  = "1.0.1"
-default[:fasd][:checksum] = "88efdfbbed8df408699a14fa6c567450bf86480f5ff3dde42d0b3e1dee731f65"
+default["fasd"]["version"] = "1.0.1"

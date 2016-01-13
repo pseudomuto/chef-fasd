@@ -24,9 +24,17 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+version    = node["fasd"]["version"]
+source_url = "https://github.com/clvv/fasd/archive/#{version}.tar.gz"
+
 ark "fasd" do
-  url "https://github.com/clvv/fasd/archive/#{node[:fasd][:version]}.tar.gz"
-  version node[:fasd][:version]
-  checksum node[:fasd][:checksum]
+  url source_url
+  version version
   action :install_with_make
+end
+
+directory "/etc/profile.d"
+
+cookbook_file "/etc/profile.d/fasd.sh" do
+  source "fasd.sh"
 end
