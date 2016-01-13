@@ -11,3 +11,6 @@ version          "1.0.0"
 supports "ubuntu"
 
 depends "ark", "~> 0.0"
+
+source_url "https://github.com/pseudomuto/chef-fasd" if respond_to?(:source_url)
+issues_url "https://github.com/pseudomuto/chef-fasd/issues" if respond_to?(:issues_url)

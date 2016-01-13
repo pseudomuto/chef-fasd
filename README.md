@@ -17,7 +17,8 @@ If you know of a version that this works for, please let me know (or update this
 Attributes
 ----------
 
-It's complicated. There's a single version the matches a release on github :smile:.
+There's a single version attribute that matches a release on
+[github](https://github.com/clvv/fasd/releases)
 
 | attribute | description | default |
 |-----------|-------------|---------|
@@ -25,8 +26,6 @@ It's complicated. There's a single version the matches a release on github :smil
 
 
 ## Usage
-
-#### fasd::default
 
 Just include `fasd` in your node's `run_list`:
 
