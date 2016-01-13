@@ -1,9 +1,13 @@
+# rubocop:disable Style/SingleSpaceBeforeFirstArg
 name             "fasd"
 maintainer       "pseudomuto"
-maintainer_email "YOUR_EMAIL"
+maintainer_email "david.muto@gmail.com"
 license          "MIT"
 description      "Installs/Configures fasd"
 long_description IO.read(File.join(File.dirname(__FILE__), "README.md"))
-version          "0.1.0"
+version          "1.0.0"
+# rubocop:enable Style/SingleSpaceBeforeFirstArg
 
-depends "ark"
+supports "ubuntu"
+
+depends "ark", "~> 0.0"

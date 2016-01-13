@@ -1,0 +1,20 @@
+---
+addons:
+  apt:
+    sources:
+      - chef-current-precise
+    packages:
+      - chefdk
+
+install: echo "skipping bundle install"
+
+before_script:
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+
+script:
+  - chef --version
+  - rubocop --version
+  - foodcritic --version
+  - rspec --version
+  - rake --version
+  - rake
